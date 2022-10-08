@@ -29,6 +29,6 @@ public class Main {
         System.out.println("----------------");
         System.out.println("LIST OF COMMANDS");
         System.out.println("INSERT INTO... To insert data in the data base");
-        System.out.println("");
+        System.out.println("a");
     }
 }
