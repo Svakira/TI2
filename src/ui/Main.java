@@ -1,35 +1,36 @@
 package ui;
 
 import java.util.Scanner;
+import java.util.UUID;
 
 public class Main {
+    public static Scanner lect= new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner lect= new Scanner(System.in);
         boolean entry=true;
         int answEntry;
         while(entry){
           menu();
         answEntry= lect.nextInt();
         lect.nextLine();
-    switch (answEntry){
-        case 1:
-            commands();
-            String comand=lect.nextLine();
-            if(comand.equalsIgnoreCase("INSERT INTO countries")){
-                countries();
-                String insertCountry= lect.next();
-            }else if(comand.equalsIgnoreCase("INSERT INTO cities")){
-                cities();
+            switch (answEntry){
+                case 1:
+                commands();
+                String comand=lect.nextLine();
+                if(comand.equalsIgnoreCase("INSERT INTO countries")){
+                    countries();
+                }else if(comand.equalsIgnoreCase("INSERT INTO cities")){
+                 cities();
                 String insertCities= lect.next();
-            }
-            break;
-        case 2:
-            entry=false;
-            break;
+                }
+                break;
+                case 2:
+                    System.out.println("SQL");
+                    break;
+                case 3:
+                    entry=false;
+                    break;
 }
         }
-
-
     }
 
     public static void menu(){
@@ -46,13 +47,32 @@ public class Main {
     }
 
     public static void countries(){
-        System.out.println("Enter the id, name, population, countryCode separated by commas");
-        System.out.println("Example: '6ec3e8ec-3dd0-11ed-b878-0242ac120002', 'Colombia', 50.2, '+57'");
+        System.out.println("Enter the name, population, countryCode");
+        System.out.println("Example: 'Colombia', 50.2, '+57'");
+        System.out.println("name");
+        String name=lect.nextLine();
+        System.out.println("population");
+        double population=lect.nextDouble();
+        lect.nextLine();
+        System.out.println("Country code");
+        String countryCode=lect.nextLine();
+        UUID uuid= UUID.randomUUID();
+        String uuidAsString=uuid.toString();
+        System.out.println(uuidAsString);
     }
 
     public static void cities(){
-        System.out.println("Enter the id, name, countryID , population  separated by commas");
-        System.out.println("Example:'e4aa04f6-3dd0-11ed-b878-0242ac120002', 'Cali', '6ec3e8ec-3dd0-11ed-b878-0242ac120002', 2.2");
+        System.out.println("Enter the name, countryID , population ");
+        System.out.println("Example: 'Cali', '6ec3e8ec-3dd0-11ed-b878-0242ac120002', 2.2");
+        System.out.println("name");
+        String name=lect.nextLine();
+        System.out.println("population");
+        double population=lect.nextDouble();
+        UUID uuid= UUID.randomUUID();
+        String idUui=uuid.toString();
+        String countryCodeUui=uuid.toString();
+        System.out.println(idUui+"id");
+        System.out.println(countryCodeUui+"County code");
     }
 
 
