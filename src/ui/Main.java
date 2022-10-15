@@ -1,10 +1,14 @@
 package ui;
 
+import model.Country;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.UUID;
 
 public class Main {
     public static Scanner lect= new Scanner(System.in);
+    public static Country country;
     public static void main(String[] args) {
         boolean entry=true;
         int answEntry;
@@ -47,6 +51,7 @@ public class Main {
     }
 
     public static void countries(){
+        ArrayList<Country>countries=new ArrayList<>();
         System.out.println("Enter the name, population, countryCode");
         System.out.println("Example: 'Colombia', 50.2, '+57'");
         System.out.println("name");
@@ -57,8 +62,10 @@ public class Main {
         System.out.println("Country code");
         String countryCode=lect.nextLine();
         UUID uuid= UUID.randomUUID();
-        String uuidAsString=uuid.toString();
-        System.out.println(uuidAsString);
+        String id=uuid.toString();
+        System.out.println(id);
+        country= new Country(id,name,population,countryCode);
+        countries.add(country);
     }
 
     public static void cities(){
@@ -69,10 +76,9 @@ public class Main {
         System.out.println("population");
         double population=lect.nextDouble();
         UUID uuid= UUID.randomUUID();
-        String idUui=uuid.toString();
-        String countryCodeUui=uuid.toString();
-        System.out.println(idUui+"id");
-        System.out.println(countryCodeUui+"County code");
+        String id=uuid.toString();
+        String countryID=uuid.toString();
+
     }
 
 
