@@ -44,4 +44,19 @@ public class City {
     public void setPopulation(double population) {
         this.population = population;
     }
+    //INSERT INTO cities(id, name, countryID, population) VALUES ('e4aa04f6-3dd0-11ed-b878-0242ac120002', 'Cali', '6ec3e8ec-3dd0-11ed-b878-0242ac120002', 2.2)
+    @Override
+    public String toString() {
+        return "INSERT INTO cities(" +
+                "id" +',' +
+                "name" + ',' +
+                " countryID" +
+                ", population" +
+                ')'+" VALUES (" +
+                "'" + id + "'" +
+                "," +"'"+ name + "'" +
+                "," + countryID +
+                "," + "'"+ population + "'" +
+                ')';
+    }
 }

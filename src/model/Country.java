@@ -1,12 +1,17 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Country {
     private String id;
     private String name;
     private double population;
     private String countryCode;
 
+    private ArrayList<City> cities;
+
     public Country(String id, String name, double population, String countryCode) {
+        cities= new ArrayList<>();
         this.id = id;
         this.name = name;
         this.population = population;
@@ -43,5 +48,25 @@ public class Country {
 
     public void setCountryCode(String countryCode) {
         this.countryCode = countryCode;
+    }
+    public void insertCity(City city){
+        cities.add(city);
+    }
+
+//INSERT INTO countries(id, name, population, countryCode) VALUES ('6ec3e8ec-3dd0-11ed-b878-0242ac120002', 'Colombia', 50.2, '+57')
+
+    @Override
+    public String toString() {
+        return "INSERT INTO countries(" +
+                "id" +',' +
+                "name" + ',' +
+                " population" +
+                ", countryCode" +
+                ')'+" VALUES (" +
+                "'" + id + "'" +
+                "," +"'"+ name + "'" +
+                "," + population +
+                "," + "'"+countryCode + "'" +
+                ')';
     }
 }

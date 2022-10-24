@@ -1,0 +1,1 @@
+INSERT INTO countries(id,name, population, countryCode) VALUES ('f3354522-a214-4dc6-a275-ef63ec735acb','Canada',51.1,'+54')
